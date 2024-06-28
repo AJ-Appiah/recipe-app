@@ -1,4 +1,4 @@
-import welcomeImage from "../images/welcome-image.png";
+import welcomeImage from "../assets/images/welcome-image.png";
 
 export default function Welcome() {
     return (
