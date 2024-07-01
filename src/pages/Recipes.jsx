@@ -3,18 +3,19 @@ import recipeOneImage from "../assets/images/recipe-one.png";
 import recipeTwoImage from "../assets/images/recipe-two.png";
 import recipeThreeImage from "../assets/images/recipe-three.png";
 import recipeFourImage from "../assets/images/recipe-four.png";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 const Recipes = () => {
   return (
     <div className="px-10 py-10">
-      <h4>Search</h4>
-      <div>
-        <h5>What is in your kitchen?</h5>
+      <h4 className="text-2xl font-bold px-15 py-15">Search</h4>
+      <div className="px-2">
+        <h5 className="text-1xl font-bold">What is in your kitchen?</h5>
         <p>Enter some ingredients</p>
       </div>
-      <div>
-        <i>MG</i>
-        <input type="text" />
+      <div className="bg-[#F1F1F1]">
+        <MagnifyingGlassIcon className="size-6 text-blue-500"  />
+        <input type="Type your ingredient here" />
       </div>
       <div className="grid grid-cols-2 gap-5 ">
         <RecipeCard image={recipeOneImage}
