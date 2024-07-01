@@ -1,4 +1,4 @@
-import CategoriesCard from "../components/CategoriesCard"
+import CategoriesTile from "../components/CategoriesTile"
 import breakfast from "../assets/images/breakfast.png"
 import lunch from "../assets/images/lunch.png"
 import drinks from "../assets/images/drinks.png"
@@ -6,56 +6,52 @@ import pastas from "../assets/images/pastas.png"
 import salads from "../assets/images/salads.png"
 import desserts from "../assets/images/desserts.png"
 import soups from "../assets/images/soups.png"
+import BottomNavigation from "../components/BottomNavigation"
 
 const Categories = () => {
   return (
+    <>
     <div>
-      <p>Categories</p>
+      <h3 className="text-black">Categories</h3>
       <div>
-        <div>
-          <p>
-            <CategoriesCard image={breakfast}
-              name="Breakfast" />
-          </p>
-        </div>
-        <div>
-          <p>
-            <CategoriesCard image={lunch}
-              name="Lunch" />
-          </p>
-        </div>
-        <div>
-          <p>
-            <CategoriesCard image={drinks}
-              name="Drinks" />
-          </p>
-        </div>
-        <div>
-          <p>
-            <CategoriesCard image={pastas}
-              name="Pastas" />
-          </p>
-        </div>
-        <div>
-          <p>
-          <CategoriesCard image={salads}
+        <p>
+          <CategoriesTile image={breakfast}
+            name="Breakfast" />
+        </p>
+
+        <p>
+          <CategoriesTile image={lunch}
+            name="Lunch" />
+        </p>
+
+        <p>
+          <CategoriesTile image={drinks}
+            name="Drinks" />
+        </p>
+
+        <p>
+          <CategoriesTile image={pastas}
+            name="Pastas" />
+        </p>
+
+        <p>
+          <CategoriesTile image={salads}
             name="Salads" />
         </p>
-      </div>
-      <div>
+
         <p>
-          <CategoriesCard image={desserts}
+          <CategoriesTile image={desserts}
             name="Desserts" />
         </p>
-      </div>
-      <div>
+
         <p>
-          <CategoriesCard image={soups}
+          <CategoriesTile image={soups}
             name="Soups" />
         </p>
       </div>
-    </div>
     </div >
+    <BottomNavigation/>
+    </>
   )
 }
 
