@@ -16,15 +16,17 @@ const Recipes = () => {
           <p>Enter some ingredients</p>
         </div>
 
-        <div className="border-solid w-[350px] h-[5px] bg-[#F1F1F1] mb-10">
-          <div className="flex flex-row  py-9">
+        <div className="border  py-[10px] p">
+          <div className="flex flex-row">
+
             <MagnifyingGlassIcon className="size-6 text-black " />
-            <input type="text"
+
+            <input type="text" 
               placeholder="Type your ingredient here" />
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-5 ">
+        <div className="grid grid-cols-2 gap-5">
           <RecipeCard image={recipeOneImage}
             name="Chorizo & mozzarella gnocchi bake" />
           <RecipeCard image={recipeTwoImage}

@@ -1,56 +1,40 @@
 import CategoriesTile from "../components/CategoriesTile"
-import breakfast from "../assets/images/breakfast.png"
-import lunch from "../assets/images/lunch.png"
-import drinks from "../assets/images/drinks.png"
-import pastas from "../assets/images/pastas.png"
-import salads from "../assets/images/salads.png"
-import desserts from "../assets/images/desserts.png"
-import soups from "../assets/images/soups.png"
 import BottomNavigation from "../components/BottomNavigation"
+import { useEffect, useState } from "react"
+import axios from "axios"
+
 
 const Categories = () => {
+  //Define a state to store categories 
+  const [categories, setCategories] = useState([]);
+
+  // Define a function to get categories
+  const getCategories = async () => {
+    const response = await axios.get(`${import.meta.env.VITE_RECIPE_API}/categories`);
+    setCategories(response.data);
+  }
+
+  // Fetch data with useEffect
+  useEffect(() => {
+    getCategories();
+  }, []);
+
   return (
     <>
-    <div>
-      <h3 className="text-black">Categories</h3>
-      <div>
-        <p>
-          <CategoriesTile image={breakfast}
-            name="Breakfast" />
-        </p>
+      <div className="px-[42px] py-[70px] mb-[96px]">
+        <h3 className="text-center text-[32px] font-bold mb-[16px]">Categories</h3>
+        <div className="flex flex-col gap-[13px] ">
+          {categories.map(category => (
+            <CategoriesTile
+              key={category.id}
+              name={category.name}
+              image={`${import.meta.env.VITE_RECIPE_API}/${category.image}`} />
+          )
 
-        <p>
-          <CategoriesTile image={lunch}
-            name="Lunch" />
-        </p>
-
-        <p>
-          <CategoriesTile image={drinks}
-            name="Drinks" />
-        </p>
-
-        <p>
-          <CategoriesTile image={pastas}
-            name="Pastas" />
-        </p>
-
-        <p>
-          <CategoriesTile image={salads}
-            name="Salads" />
-        </p>
-
-        <p>
-          <CategoriesTile image={desserts}
-            name="Desserts" />
-        </p>
-
-        <p>
-          <CategoriesTile image={soups}
-            name="Soups" />
-        </p>
-      </div>
-    </div >
-    <BottomNavigation/>
+          )}
+        </div>
+      </div >
+      <BottomNavigation />
     </>
   )
 }
